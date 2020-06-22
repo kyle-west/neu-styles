@@ -13,6 +13,12 @@ body {
   background-color: var(--neu-bg-default);
 }
 
+@keyframes elevatorDown {
+  0% { box-shadow: var(--neu-shadow-top) }
+  50% { box-shadow: var(--neu-shadow-main) }
+  100% { box-shadow: var(--neu-shadow-basement) }
+}
+
 .neu,
 .neu[level="1"],
 .neu[interactive],
@@ -33,23 +39,22 @@ input.neu {
   display: block;
 }
 
-.neu[level="2"],
-.neu[interactive],
-button.neu,
-input.neu {
+.neu[level="2"] {
   box-shadow: var(--neu-shadow-top);
 }
-
 
 .neu[level="0"] {
   box-shadow: var(--neu-shadow-main);
 }
 
-.neu[interactive]:active,
-button.neu:active,
-input.neu:active,
 .neu[level="-1"] {
   box-shadow: var(--neu-shadow-basement);
+}
+
+.neu[interactive],
+button.neu,
+input.neu {
+  box-shadow: var(--neu-shadow-top);
 }
 
 .neu[interactive]:focus,
@@ -62,8 +67,10 @@ input.neu:hover {
   margin: 12px;
   padding: 20px;
 }
-.neu[interactive]:focus,
-button.neu:focus,
-input.neu:focus {
-  
+
+.neu[interactive]:active,
+button.neu:active,
+input.neu:active {
+  box-shadow: var(--neu-shadow-basement);
+  animation: elevatorDown 0.2s;
 }
