@@ -5,27 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NeuStyles</title>
 
+  <script src="./demo/wc-toggle.js"></script>
   <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     body {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       font-size: 20px;
     }
+
+    main {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    [centered] ,
+    [centered] > * {
+      width: max-content;
+      margin: auto;
+    }
+
   </style>
 </head>
 <body>
-  <div class="neu">This is a NeuStyles Element</div>
-  <button class="neu">This Element is interactive</button>
-
-  <br/>
-  <br/>
-  <br/>
-
-  <div class="neu" level="-1">This Element is in the basement</div>
-  <div class="neu" level="0">This Element is on the main floor</div>
-  <div class="neu" level="1">This Element is in the middle</div>
-  <div class="neu" level="2">This Element is on top level</div>
-
-</body>
+  <main>
+    <h1>Neumorphism</h1>
+    
+    <h2>Levels</h2>
+    <p>
+      Neumorphic Design relies on elements living in 3 main levels. Like the levels of a 2-story house, 
+      elements reside on the main floor, the top floor, or in the basement.
+    </p>
+    
+    <div centered>
+      <div class="neu" level="1">This Element is on top level</div>
+      <br/>
+      <br/>
+      <div class="neu" level="0">This Element is on the main floor</div>
+      <br/>
+      <br/>
+      <div class="neu" level="-1">This Element is in the basement</div>
+    </div>
+    
+    <h2>Interaction</h2>
+    <p>
+      When an element is interacted with, it transitions between all 3 levels. This simulates the 
+      pressing of a physical button. Elements that are interactive should have bright/strong colors
+      to attract the user's attention.
+    </p>
+    
+    <div centered>
+      <wc-toggle
+        on-icon="microphone"
+        on-color="red"
+        off-icon="microphone-slash"
+        off-color="grey"
+      ></wc-toggle>
+      <wc-toggle
+      state="off"
+      on-icon="video-camera"
+      on-color="red"
+      off-icon="eye-slash"
+      off-color="grey"
+      ></wc-toggle>
+      <wc-toggle
+        on-icon="volume-up"
+        on-color="red"
+        off-icon="volume-off"
+        off-color="grey"
+      ></wc-toggle>
+    </div>
+  </main>
+  </body>
 </html>

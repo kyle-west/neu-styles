@@ -2,12 +2,11 @@ body {
   --neu-bg-default: #e9f3f7;
   --neu-text-default: #124559;
   --neu-shadow-light-default: #fff;
-  --neu-shadow-dark-default: #598392;
+  --neu-shadow-dark-default: #a4cfe0;
 
-  --neu-shadow-top: -8px -8px 16px var(--neu-shadow-light-default), 8px 8px 16px var(--neu-shadow-dark-default);
-  --neu-shadow-middle: -4px -4px 8px var(--neu-shadow-light-default), 4px 4px 8px var(--neu-shadow-dark-default);
+  --neu-shadow-top: -4px -4px 8px 4px var(--neu-shadow-light-default), 4px 4px 8px 4px var(--neu-shadow-dark-default);
   --neu-shadow-main: none;
-  --neu-shadow-basement: inset -4px -4px 8px var(--neu-shadow-light-default), inset 4px 4px 8px var(--neu-shadow-dark-default);
+  --neu-shadow-basement: inset -4px -4px 6px 2px var(--neu-shadow-light-default), inset 4px 4px 6px 2px var(--neu-shadow-dark-default);
 
   color: var(--neu-text-default);
   background-color: var(--neu-bg-default);
@@ -15,7 +14,7 @@ body {
 
 @keyframes elevatorDown {
   0% { box-shadow: var(--neu-shadow-top) }
-  50% { box-shadow: var(--neu-shadow-main) }
+  66% { box-shadow: var(--neu-shadow-main) }
   100% { box-shadow: var(--neu-shadow-basement) }
 }
 
@@ -26,7 +25,7 @@ button.neu,
 input.neu {
   all: inherit;
   border: none;
-  box-shadow: var(--neu-shadow-middle);
+  box-shadow: var(--neu-shadow-top);
   padding: 16px;
   border-radius: 16px;
   margin: 16px;
@@ -37,10 +36,6 @@ input.neu {
 
 .neu.block {
   display: block;
-}
-
-.neu[level="2"] {
-  box-shadow: var(--neu-shadow-top);
 }
 
 .neu[level="0"] {
@@ -64,8 +59,8 @@ input.neu:focus,
 button.neu:hover,
 input.neu:hover {
   cursor: pointer;
-  margin: 12px;
-  padding: 20px;
+  margin: 13px;
+  padding: 19px;
 }
 
 .neu[interactive]:active,
