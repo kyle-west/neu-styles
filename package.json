@@ -1,0 +1,29 @@
+{
+  "name": "neu-styles",
+  "version": "0.1.0",
+  "description": "Neumorphic Stylesheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle-west/neu-styles.git"
+  },
+  "keywords": [
+    "neumorphism",
+    "ux",
+    "design",
+    "stylesheet"
+  ],
+  "author": "kyle-west",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kyle-west/neu-styles/issues"
+  },
+  "homepage": "https://github.com/kyle-west/neu-styles#readme",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}
