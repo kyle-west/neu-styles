@@ -5,24 +5,22 @@ body {
   --neu-shadow-dark-default: #a4cfe0;
 
   --neu-shadow-top: -4px -4px 8px 4px var(--neu-shadow-light-default), 4px 4px 8px 4px var(--neu-shadow-dark-default);
+  --neu-shadow-top-shallow: -1px -1px 2px 1px var(--neu-shadow-light-default), 1px 1px 2px 1px var(--neu-shadow-dark-default);
   --neu-shadow-main: none;
   --neu-shadow-basement: inset -4px -4px 6px 2px var(--neu-shadow-light-default), inset 4px 4px 6px 2px var(--neu-shadow-dark-default);
+  --neu-shadow-basement-shallow: inset -1px -1px 2px 1px var(--neu-shadow-light-default), inset 1px 1px 2px 1px var(--neu-shadow-dark-default);;
 
   color: var(--neu-text-default);
   background-color: var(--neu-bg-default);
-}
-
-@keyframes elevatorDown {
-  0% { box-shadow: var(--neu-shadow-top) }
-  66% { box-shadow: var(--neu-shadow-main) }
-  100% { box-shadow: var(--neu-shadow-basement) }
+  box-sizing: border-box;
 }
 
 .neu,
-.neu[level="1"],
-.neu[interactive],
-button.neu,
-input.neu {
+[level="1"],
+[level="0"],
+[level="-1"],
+button,
+input {
   all: inherit;
   border: none;
   box-shadow: var(--neu-shadow-top);
@@ -31,41 +29,56 @@ input.neu {
   margin: 16px;
   display: inline-block;
   transition: all 0.3s;
+  text-align: center;
 }
 
+input:not([type="submit"]) {
+  margin: 16px;
+  padding: 16px;
+}
 
 .neu.block {
   display: block;
 }
 
-.neu[level="0"] {
+[level="0"] {
   box-shadow: var(--neu-shadow-main);
 }
 
-.neu[level="-1"] {
+[level="-1"] {
   box-shadow: var(--neu-shadow-basement);
 }
 
-.neu[interactive],
-button.neu,
-input.neu {
+button,
+input[type="button"],
+input[type="submit"] {
   box-shadow: var(--neu-shadow-top);
 }
 
-.neu[interactive]:focus,
-button.neu:focus,
-input.neu:focus,
-.neu[interactive]:hover,
-button.neu:hover,
-input.neu:hover {
-  cursor: pointer;
+button:focus,
+input:focus,
+button:hover,
+input:hover {
   margin: 13px;
   padding: 19px;
 }
 
-.neu[interactive]:active,
-button.neu:active,
-input.neu:active {
+button:hover, 
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  box-shadow: var(--neu-shadow-top-shallow);
+}
+
+input:not([type="submit"]) {
   box-shadow: var(--neu-shadow-basement);
-  animation: elevatorDown 0.2s;
+}
+input:not([type="submit"]):active,
+input:not([type="submit"]):focus {
+  box-shadow: var(--neu-shadow-basement-shallow);
 }

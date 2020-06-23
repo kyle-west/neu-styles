@@ -25,6 +25,7 @@
     [centered] > * {
       width: max-content;
       margin: auto;
+      text-align: center;
     }
 
   </style>
@@ -40,23 +41,23 @@
     </p>
     
     <div centered>
-      <div class="neu" level="1">This Element is on top level</div>
+      <div level="1">This Element is on top level</div>
       <br/>
       <br/>
-      <div class="neu" level="0">This Element is on the main floor</div>
+      <div level="0">This Element is on the main floor</div>
       <br/>
       <br/>
-      <div class="neu" level="-1">This Element is in the basement</div>
+      <div level="-1">This Element is in the basement</div>
     </div>
     
     <h2>Interaction</h2>
     <p>
-      When an element is interacted with, it transitions between all 3 levels. This simulates the 
-      pressing of a physical button. Elements that are interactive should have bright/strong colors
-      to attract the user's attention.
+      When an element is interacted with, it transitions toward the main floor, but refrains from entering that level. 
+      For example, buttons simulate the pressing of a physical button. They should have bright/strong colors to attract the user's attention.
     </p>
     
     <div centered>
+      <br/>
       <wc-toggle
         on-icon="microphone"
         on-color="red"
@@ -76,6 +77,14 @@
         off-icon="volume-off"
         off-color="grey"
       ></wc-toggle>
+    </div>
+
+    <p>
+      The depression of a text input directs the user to "enter" that space.
+    </p>
+
+    <div centered>
+      <input level="-1" placeholder="This is an input box"/>
     </div>
   </main>
   </body>
