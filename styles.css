@@ -53,6 +53,7 @@ button,
 input[type="button"],
 input[type="submit"] {
   box-shadow: var(--neu-shadow-top);
+  user-select: none;
 }
 
 button:focus,
@@ -65,7 +66,9 @@ input:hover {
 
 button:hover, 
 input[type="button"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
   cursor: pointer;
 }
 
@@ -81,4 +84,66 @@ input:not([type="submit"]) {
 input:not([type="submit"]):active,
 input:not([type="submit"]):focus {
   box-shadow: var(--neu-shadow-basement-shallow);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-shadow: var(--neu-shadow-basement-shallow);
+  vertical-align: middle;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 8px;
+  position: relative;
+}
+
+input[type="radio"] {
+  border-radius: 8px;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:active,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:active,
+input[type="radio"]:focus {
+  box-shadow: var(--neu-shadow-basement-shallow);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 6px;
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:active,
+input[type="radio"]:focus {
+  border-radius: 10px;
+}
+
+input:checked::after {
+  content: '\2713';
+  font-size: 16px;
+  line-height: 0px;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  font-family: monospace;
+  transition: all 0.3s;
+}
+
+input[type="radio"]:checked::after {
+  content: '\2022';
+  font-size: 18px;
+  left: 3px;
+}
+
+input:checked:hover::after,
+input:checked:active::after,
+input:checked:focus::after {
+  left: 6px;
+  top: 10px;
+}
+
+input[type="radio"]:checked:hover::after,
+input[type="radio"]:checked:active::after,
+input[type="radio"]:checked:focus::after {
+  left: 5px;
 }

@@ -21,10 +21,12 @@
       margin: auto;
     }
 
-    [centered] ,
-    [centered] > * {
+    [centered],
+    [centered][center-content] > * {
       width: max-content;
       margin: auto;
+    }
+    [centered][center-content] {
       text-align: center;
     }
 
@@ -40,7 +42,7 @@
       elements reside on the main floor, the top floor, or in the basement.
     </p>
     
-    <div centered>
+    <div centered center-content>
       <div level="1">This Element is on top level</div>
       <br/>
       <br/>
@@ -53,9 +55,15 @@
     <h2>Interaction</h2>
     <p>
       When an element is interacted with, it transitions toward the main floor, but refrains from entering that level. 
-      For example, buttons simulate the pressing of a physical button. They should have bright/strong colors to attract the user's attention.
+      For example, buttons simulate the pressing of a physical button. They should contain bright/strong colors to attract the user's attention.
     </p>
     
+    <div centered>
+      <button style="color:blue;">I am a button</button>
+    </div>
+    <div centered>
+      <button><i class="fa fa-commenting" style="color:green;"></i> I am an icon button</button>
+    </div>
     <div centered>
       <br/>
       <wc-toggle
@@ -85,6 +93,30 @@
 
     <div centered>
       <input level="-1" placeholder="This is an input box"/>
+    </div>
+
+    <p>
+      Checkboxes and radio buttons are also depressed, but they remain at a shallow inset because of their small size.
+    </p>
+
+    <div centered>
+      <div>
+        <input type="checkbox" id="cat" name="animal" value="cat">
+        <label for="cat">Cat</label><br>
+        <input type="checkbox" id="dog" name="animal" value="dog">
+        <label for="dog">Dog</label><br>
+        <input type="checkbox" id="cow" name="animal" value="cow">
+        <label for="cow">Cow</label>
+      </div>
+      <br/>
+      <div>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </div>
     </div>
   </main>
   </body>
